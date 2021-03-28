@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Business.Concreate
 {
-    class ColorManager : IColorService
+   public class ColorManager : IColorService
     {
         IColorDal _colorDal;
 
@@ -31,9 +31,10 @@ namespace Business.Concreate
             return _colorDal.GetAll();
         }
 
-        public Color GetById(int colorId)
+
+        public List<Color> GetColorByColorId(int id)
         {
-            return _colorDal.Get(c => c.ColorId == colorId);
+           return _colorDal.GetAll(p => p.ColorId == id);
         }
 
         public void Update(Color color)
