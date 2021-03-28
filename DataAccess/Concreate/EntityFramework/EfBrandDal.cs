@@ -1,4 +1,6 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess;
+using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using Entities.Concreate;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +11,7 @@ using System.Text;
 
 namespace DataAccess.Concreate.EntityFramework
 {
-    public class EfBrandDal : IBrandDal
+    public class EfBrandDal : EfEntityRepositoryBase<Brand, CarEntityContext>, IBrandDal
     {
         public void Add(Brand entity)
         {
@@ -59,6 +61,11 @@ namespace DataAccess.Concreate.EntityFramework
         }
 
         public List<Car> GetByIdCar(int carId)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Brand> IEntityRepository<Brand>.GetByIdCar(int carId)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,6 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess;
+using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using Entities.Concreate;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +11,7 @@ using System.Text;
 
 namespace DataAccess.Concreate.EntityFramework
 {
-    public class EfColorDal : IColorDal
+    public class EfColorDal : EfEntityRepositoryBase<Color, CarEntityContext>, IColorDal
     {
         public void Add(Color entity)
         {
@@ -64,6 +66,9 @@ namespace DataAccess.Concreate.EntityFramework
             throw new NotImplementedException();
         }
 
-     
+        List<Color> IEntityRepository<Color>.GetByIdCar(int carId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
