@@ -12,24 +12,33 @@ namespace ConsoleUI
         {
             // BrandTest();
             // ColorTest();
-           // CarTest();
-
+               CarTest();
         }
 
         private static void CarTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
+            var result = carManager.GetCarDetails();
+            if (result.Success==true)
+            {
+                foreach (var car in carManager.GetCarDetails().Data)
+                {
+                    Console.WriteLine(car.CarName + "/" + car.BrandName + "/" + car.ColorName);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+
+
+
             //  carManager.Add(new Car { BrandId = 3, CarId = 3, CarName = "Mini cooper", ColorId = 3, DailyPrice = 400, Description = "Big Experience", ModelYear = 2017 });  
 
             // carManager.Delete(new Car { CarId=3});
 
-            //  carManager.Update(new Car { BrandId = 3, CarId = 3, CarName = "Mini cooper", ColorId = 4, DailyPrice = 500, Description = "Big Experience", ModelYear = 2018 });   
-
-            //foreach (var car in carManager.GetCarDetails())
-            //{
-            //    Console.WriteLine(car.CarName + "/" + car.BrandName + "/"+ car.ColorName);
-            //}
+            //  carManager.Update(new Car { BrandId = 3, CarId = 3, CarName = "Mini cooper", ColorId = 4, DailyPrice = 500, Description = "Big Experience", ModelYear = 2018 }); 
 
             //foreach (var car in carManager.GetCarsByColorId(2))
             //{

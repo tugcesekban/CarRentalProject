@@ -36,7 +36,11 @@ namespace Business.Concreate
             return _brandDal.GetAll(c => c.BrandId == id);
         }
 
-      
+        public Brand GetById(int brandId)
+        {
+            return _brandDal.Get(p => p.BrandId == brandId);
+        }
+
         public void Update(Brand brand)
         {
             _brandDal.Update(brand);
