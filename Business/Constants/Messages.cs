@@ -10,6 +10,8 @@ namespace Business.Constants
         public static string CarDescriptionInvalidandPrice = "Car description must be greater than 2 and daily price of the car must be greater than zero";
         public static string MaintenanceTime = "System is in Maintenance";
         public static string CarsListed = "Cars are listed";
+        public static string BrandsListed = "Brands are listed";
+        public static string ColorsListed = "Brands are listed";
 
 
     }
