@@ -12,6 +12,9 @@ namespace Business.Constants
         public static string CarsListed = "Cars are listed";
         public static string BrandsListed = "Brands are listed";
         public static string ColorsListed = "Brands are listed";
+        public static string CustomersListed = "Customers are listed";
+        public static string UserListed = "Users are listed";
+        public static string RentalListed = "Rentals are listed";
 
 
     }

@@ -12,7 +12,10 @@ namespace ConsoleUI
         {
             // BrandTest();
             // ColorTest();
-               CarTest();
+            //  CarTest();
+
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            rentalManager.Add(new Rental { Id = 3, CarId = 1, CustomerId = 2, RentDate = Convert.ToDateTime("03.03.2021"), ReturnDate = Convert.ToDateTime("07.03.2021") });
         }
 
         private static void CarTest()
@@ -31,8 +34,6 @@ namespace ConsoleUI
             {
                 Console.WriteLine(result.Message);
             }
-
-
 
             //  carManager.Add(new Car { BrandId = 3, CarId = 3, CarName = "Mini cooper", ColorId = 3, DailyPrice = 400, Description = "Big Experience", ModelYear = 2017 });  
 
