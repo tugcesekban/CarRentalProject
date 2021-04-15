@@ -23,20 +23,15 @@ namespace Core.Utilities.Helpers
             }
             catch (Exception exception)
             {
-
                 return exception.Message;
             }
-
             return result.Path2;
         }
-
         public static string UpdateAsync(string sourcePath, IFormFile file)
         {
             var result = newPath(file);
-
             try
-            {
-             
+            {           
                 if (sourcePath.Length > 0)
                 {
                     using (var stream = new FileStream(result.newPath, FileMode.Create))
@@ -54,7 +49,6 @@ namespace Core.Utilities.Helpers
 
             return result.Path2;
         }
-
         public static IResult DeleteAsync(string path)
         {
             File.Delete(path);

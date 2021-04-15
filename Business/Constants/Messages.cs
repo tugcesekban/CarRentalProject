@@ -19,5 +19,6 @@ namespace Business.Constants
         public static string ImageCountExceeded = "Car Images are exceeded";
         public static string DeletedCarImage = "Car Images added";
         public static string UpdatedCarImage = "Car Images updated";
+        public static string CarImageListed = "Car Images add";
     }
 }
