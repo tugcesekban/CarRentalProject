@@ -1,7 +1,8 @@
 ﻿using Business.Abstract;
-using Entities.Concreate;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Core.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;

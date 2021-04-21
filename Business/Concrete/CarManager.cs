@@ -5,14 +5,14 @@ using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
-using Entities.Concreate;
+using Entities.Concrete;
 using Entities.DTOs;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Business.Concreate
+namespace Business.Concrete
 {
     public class CarManager : ICarService
     {
@@ -21,6 +21,8 @@ namespace Business.Concreate
         {
             _carDal = carDal;
         }
+
+
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         { 

@@ -4,7 +4,7 @@ using Core.Utilities.Business;
 using Core.Utilities.Helpers;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
-using Entities.Concreate;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Business.Concreate
+namespace Business.Concrete
 {
     public class CarImageManager : ICarImageService
     {

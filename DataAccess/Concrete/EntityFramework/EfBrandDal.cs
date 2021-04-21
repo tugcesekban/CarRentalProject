@@ -1,7 +1,7 @@
 ﻿using Core.DataAccess;
 using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
-using Entities.Concreate;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,21 +9,22 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Concreate.EntityFramework
+namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfColorDal : EfEntityRepositoryBase<Color, CarEntityContext>, IColorDal
+    public class EfBrandDal : EfEntityRepositoryBase<Brand, CarEntityContext>, IBrandDal
     {
-        public void Add(Color entity)
+        public void Add(Brand entity)
         {
             using (CarEntityContext context = new CarEntityContext())
             {
                 var addedEntity = context.Entry(entity);
                 addedEntity.State = EntityState.Added;
                 context.SaveChanges();
+
             }
         }
 
-        public void Delete(Color entity)
+        public void Delete(Brand entity)
         {
             using (CarEntityContext context = new CarEntityContext())
             {
@@ -32,7 +33,7 @@ namespace DataAccess.Concreate.EntityFramework
                 context.SaveChanges();
             }
         }
-        public void Update(Color entity)
+        public void Update(Brand entity)
         {
             using (CarEntityContext context = new CarEntityContext())
             {
@@ -41,32 +42,30 @@ namespace DataAccess.Concreate.EntityFramework
                 context.SaveChanges();
             }
         }
-
-        public Color Get(Expression<Func<Color, bool>> filter)
+        public Brand Get(Expression<Func<Brand, bool>> filter)
         {
             using (CarEntityContext context = new CarEntityContext())
             {
-                return context.Set<Color>().SingleOrDefault(filter);
+                return context.Set<Brand>().SingleOrDefault(filter);
             }
         }
 
-        public List<Color> GetAll(Expression<Func<Color, bool>> filter = null)
+        public List<Brand> GetAll(Expression<Func<Brand, bool>> filter = null)
         {
             using (CarEntityContext context = new CarEntityContext())
             {
                 return filter == null
-                    ? context.Set<Color>().ToList()
-                    : context.Set<Color>().Where(filter).ToList();
-            }
+                ? context.Set<Brand>().ToList()
+                : context.Set<Brand>().Where(filter).ToList();
+        }
         }
 
-      
         public List<Car> GetByIdCar(int carId)
         {
             throw new NotImplementedException();
         }
 
-        List<Color> IEntityRepository<Color>.GetByIdCar(int carId)
+        List<Brand> IEntityRepository<Brand>.GetByIdCar(int carId)
         {
             throw new NotImplementedException();
         }
