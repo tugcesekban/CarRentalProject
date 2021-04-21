@@ -18,6 +18,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 using Core.Utilities.Security.Encryption;
+using Microsoft.AspNetCore.Http;
 
 namespace WebAPI
 {
@@ -46,6 +47,9 @@ namespace WebAPI
             //services.AddSingleton<IRentalDal, EfRentalDal>();
             //services.AddSingleton<IUserService, UserManager>();
             //services.AddSingleton<IUserDal, EfUserDal>();
+
+
+           // services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
