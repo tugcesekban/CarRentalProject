@@ -18,5 +18,6 @@ namespace Business.Abstract
         IDataResult<List<Car>> GetAllByUnitPrice(decimal min, decimal max);
         IDataResult<List<CarDetailDto>> GetCarDetails();
         IDataResult<Car> GetById(int carId);
+        IResult AddTransactionalTest(Car car);
     }
 }
