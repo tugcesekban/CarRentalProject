@@ -40,14 +40,14 @@ namespace Business.Concrete
 
             return new Result(true, "Deleted a product");
         }
-        [CacheAspect]
-        [ValidationAspect(typeof(CarValidator))]
+        //[CacheAspect]
+        //[ValidationAspect(typeof(CarValidator))]
         public IDataResult<List<Car>> GetAll()
         {
-            if (DateTime.Now.Hour ==20)
-            {
-                return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
-            }
+            //if (DateTime.Now.Hour ==20)
+            //{
+            //    return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
+            //}
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarsListed);
         }
         public IDataResult<List<Car>> GetAllByUnitPrice(decimal min, decimal max)
